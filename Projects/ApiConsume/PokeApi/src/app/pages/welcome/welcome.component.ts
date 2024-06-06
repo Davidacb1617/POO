@@ -25,7 +25,7 @@ export class WelcomeComponent implements OnInit {
   @ViewChild('tarjetas') tarjetasElement!: ElementRef;
 
   constructor(private pokemon: PokemonService) {}
-
+pokemons: any;
   listaPokemons: Resultado[] = [];
   pokemonSeleccionado: Pokemon | undefined;
   pagina: number = 1;
@@ -34,6 +34,7 @@ export class WelcomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.cargarLista();
+
   }
 
   getYPosition(e: Event): number {
