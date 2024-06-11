@@ -11,7 +11,10 @@ import { EventEmitter } from '@angular/core';
   standalone: true,
   imports: [CommonModule, NzTableModule, NzButtonModule],
   templateUrl: './bean-flavor-list.component.html',
-  styleUrl: './bean-flavor-list.component.css'
+  styleUrl: './bean-flavor-list.component.css',
+  host: {
+    'ngSkipHydration': ''
+  }
 })
 export class BeanFlavorListComponent implements OnInit{
 
@@ -31,7 +34,6 @@ export class BeanFlavorListComponent implements OnInit{
   }
 
   deleteBeanFlavor(id: string) {
-    console.log(id);
     this.service.deleteBeanFlavor(id).subscribe(() => {
       this.loadBeanFlavor();
     });
