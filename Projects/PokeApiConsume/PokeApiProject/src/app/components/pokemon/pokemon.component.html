@@ -1,0 +1,42 @@
+<div>
+  <nz-card
+    style="
+      display: flex;
+      border-radius: 16px;
+      background-color: rgb(219, 255, 190);
+      justify-content: center;
+      margin-right: 20px;
+      width: 200px;
+      height: 250px;
+    "
+  >
+    <h3
+      style="
+        font-size: 15px;
+        text-align: center;
+        font-weight: bold;
+        color: teal;
+      "
+    >
+      {{ data?.name | titlecase }}
+    </h3>
+    <img
+      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{
+        id
+      }}.png"
+      alt="{{ data?.name }}"
+      style="width: 100%"
+    />
+    <p style="text-align: center; font-weight: 600">No.{{ id }}</p>
+    <span
+      style="
+        position: absolute;
+        bottom: 10px;
+        left: 16px;
+        font-weight: bold;
+        color: rgb(119, 119, 119);
+      "
+      >{{ pokemonTypes() | titlecase }}</span
+    >
+  </nz-card>
+</div>

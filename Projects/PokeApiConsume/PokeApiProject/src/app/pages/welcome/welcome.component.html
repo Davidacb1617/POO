@@ -1,0 +1,20 @@
+<div style="display: flex; justify-content: center; margin-bottom: 20px">
+  <a href="https://fontmeme.com/pokemon-font/"
+    ><img
+      src="https://fontmeme.com/permalink/240608/b659d139fdcbc63fd4f0623a6b3ecaa6.png"
+      alt="pokemon-font"
+  /></a>
+</div>
+<div
+  style="
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    max-height: 75vh;
+    overflow-y: scroll;
+  "
+>
+  @for (pokemon of listaPokemon; track $index) {
+  <app-pokemon [data]="pokemon"></app-pokemon>
+  }
+</div>
