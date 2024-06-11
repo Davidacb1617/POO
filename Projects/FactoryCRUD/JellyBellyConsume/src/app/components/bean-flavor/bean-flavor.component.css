@@ -1,44 +1,4 @@
-.card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 16px;
-  margin: 16px;
-  text-align: center;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative; /* Agregado para permitir posicionamiento absoluto */
-}
-
-.card:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.card_title {
-  font-size: 1.5em;
-  margin-bottom: 0.5em;
-}
-
-.card_ingredients {
-  font-size: 1.25em;
-  margin-bottom: 0.5em;
-  text-align: left;
-  margin-bottom: 2rem;
-  padding-left: 1.5rem;
-}
-
-.card_content {
-  font-size: 1em;
-  flex-grow: 1;
-}
-
-.card_id {
-  font-size: 1em;
-  position: absolute;
-  bottom: 2px;
-  right: 16px;
-  text-align: right;
+.submit_btn{
+    margin-top: 15px;
+    margin-bottom: 15px;
 }

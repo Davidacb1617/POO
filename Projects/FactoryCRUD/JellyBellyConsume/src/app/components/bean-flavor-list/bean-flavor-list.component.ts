@@ -16,6 +16,7 @@ import { EventEmitter } from '@angular/core';
     'ngSkipHydration': ''
   }
 })
+
 export class BeanFlavorListComponent implements OnInit{
 
   beanFlavors: BeanFlavor[] = [];
@@ -34,6 +35,7 @@ export class BeanFlavorListComponent implements OnInit{
   }
 
   deleteBeanFlavor(id: string) {
+    console.log(id);
     this.service.deleteBeanFlavor(id).subscribe(() => {
       this.loadBeanFlavor();
     });
