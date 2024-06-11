@@ -8,20 +8,21 @@ import { BeanFlavor } from '../interfaces/bean-flavor';
 })
 export class ApiService {
   constructor(private http: HttpClient) {}
-  private url = 'http://localhost:3000/bean-flavor';
-  createBeanFlavor<T>(item: T): Observable<T> {
-    return this.http.post<T>(`${this.url}`, item);
+  private url = 'http://localhost:3000';
+  
+  createBeanFlavor<T>(item: T): Observable<BeanFlavor> {
+    return this.http.post<BeanFlavor>(`${this.url}/bean-flavor`, item);
   }
 
-  updateBeanFlavor(id: string, item: any): Observable<any> {
-    return this.http.patch<any>(`${this.url}/${id}`, item);
+  updateBeanFlavor(id: string, item: BeanFlavor): Observable<BeanFlavor> {
+    return this.http.patch<BeanFlavor>(`${this.url}/bean-flavor/${id}`, item);
   }
 
-  deleteBeanFlavor(id: string): Observable<any> {
-    return this.http.delete<any>(`${this.url}/${id}`);
+  deleteBeanFlavor(id: string): Observable<BeanFlavor> {
+    return this.http.delete<BeanFlavor>(`${this.url}/bean-flavor/${id}`);
   }
 
   getBeanFlavors(): Observable<BeanFlavor[]> {
-    return this.http.get<BeanFlavor[]>(`${this.url}`);
+    return this.http.get<BeanFlavor[]>(`${this.url}/bean-flavor`);
   }
 }
