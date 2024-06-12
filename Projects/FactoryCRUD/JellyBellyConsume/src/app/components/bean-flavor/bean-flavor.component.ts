@@ -38,13 +38,12 @@ import { BeanFlavorUpdateComponent } from '../bean-flavor-update/bean-flavor-upd
     NzInputNumberComponent,
     BeanFlavorListComponent,
     BeanFlavorUpdateComponent,
-    CommonModule
+    CommonModule,
   ],
   templateUrl: './bean-flavor.component.html',
   styleUrl: './bean-flavor.component.css',
 })
 export class BeanFlavorComponent implements OnInit {
-
   selectedBeanFlavor: any;
 
   validateForm: FormGroup<{
@@ -53,31 +52,32 @@ export class BeanFlavorComponent implements OnInit {
     Ingredients: FormControl<string>;
   }>;
 
-constructor(
-  private fb: NonNullableFormBuilder,
-  private apiService: ApiService,
-  private notification: NzNotificationService
-){
-  const { required } = MyValidators;
+  constructor(
+    private fb: NonNullableFormBuilder,
+    private apiService: ApiService,
+    private notification: NzNotificationService
+  ) {
+    const { required } = MyValidators;
     this.validateForm = this.fb.group({
       FlavorName: ['', [required]],
       Description: ['', [required]],
       Ingredients: ['', [required]],
     });
-}
-  ngOnInit() {
   }
+  ngOnInit() {}
 
-  submitFormProduct(): void {
+  submitFormBeanFlavor(): void {
     if (this.validateForm.valid) {
-      this.apiService.createBeanFlavor(this.validateForm.value).subscribe(() => {
-        this.createNotification(
-          'success',
-          `${this.validateForm.value.FlavorName} ${this.validateForm.value.Description}`,
-          'The Product has been created successfully!'
-        );
-        this.validateForm.reset();
-      });
+      this.apiService
+        .createBeanFlavor(this.validateForm.value)
+        .subscribe(() => {
+          this.createNotification(
+            'success',
+            `${this.validateForm.value.FlavorName} ${this.validateForm.value.Description}`,
+            'The Bean Flavor has been created successfully!'
+          );
+          this.validateForm.reset();
+        });
     } else {
       Object.values(this.validateForm.controls).forEach((control) => {
         if (control.invalid) {

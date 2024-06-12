@@ -1,14 +1,10 @@
 <h1>Products</h1>
 
-<form nz-form [formGroup]="validateForm" (ngSubmit)="submitFormProduct()">
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitFormBeanFlavor()">
   <nz-form-item>
     <nz-form-label [nzSpan]="7" nzRequired>Flavor Name</nz-form-label>
     <nz-form-control [nzSpan]="12">
-      <input
-        nz-input
-        formControlName="FlavorName"
-        placeholder="CARAMEL CORN"
-      />
+      <input nz-input formControlName="FlavorName" placeholder="CARAMEL CORN" />
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
@@ -24,10 +20,11 @@
   <nz-form-item>
     <nz-form-label [nzSpan]="7" nzRequired>Ingredients</nz-form-label>
     <nz-form-control [nzSpan]="12">
-      <input nz-input
+      <input
+        nz-input
         formControlName="Ingredients"
         placeholder="SUGAR, CORN SYRUP, MODIFIED FOOD STARCH, CONTAINS 2% OR LESS OF THE FOLLOWING: NATURAL AND ARTIFICIAL FLAVORS, COLOR ADDED, YELLOW 6, YELLOW 5 & 6 LAKE, BLUE 2 LAKE, BEESWAX, CARNAUBA WAX, CONFECTIONER'S GLAZE, SALT."
-      >
+      />
     </nz-form-control>
   </nz-form-item>
 
@@ -41,7 +38,9 @@
   </nz-form-item>
 </form>
 
-<app-bean-flavor-list (productSelected)="editBeanFlavor($event)"></app-bean-flavor-list>
+<app-bean-flavor-list
+  (productSelected)="editBeanFlavor($event)"
+></app-bean-flavor-list>
 
 <app-bean-flavor-update
   *ngIf="selectedBeanFlavor"
