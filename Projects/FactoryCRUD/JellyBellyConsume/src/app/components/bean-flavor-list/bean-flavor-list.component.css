@@ -1,0 +1,19 @@
+.title_flavor_name {
+  font-size: 15px;
+  font-weight: bold;
+  color: #2c2c2c;
+  text-align: center;
+}
+
+.description_flavor {
+  font-size: 12px;
+  color: #2c2c2c;
+  text-align: justify
+}
+
+.ingredients_flavor {
+  font-size: 12px;
+  font-weight: 500;
+  color: #2c2c2c;
+  text-align: justify;
+}

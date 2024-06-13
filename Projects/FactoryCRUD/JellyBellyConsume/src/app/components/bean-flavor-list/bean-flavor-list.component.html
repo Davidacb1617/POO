@@ -15,9 +15,9 @@
   </thead>
   <tbody>
     <tr *ngFor="let beanFlavor of basicTable.data">
-      <td>{{ beanFlavor.FlavorName }}</td>
-      <td>{{ beanFlavor.Description }}</td>
-      <td>{{ beanFlavor.Ingredients }}</td>
+      <td class="title_flavor_name">{{ beanFlavor.FlavorName }}</td>
+      <td class="description_flavor">{{ beanFlavor.Description }}</td>
+      <td class="ingredients_flavor">{{ beanFlavor.Ingredients }}</td>
       <td>
         <button
           nz-button
