@@ -10,7 +10,7 @@ export class PokeApiService {
   pokeApiUrl = 'https://pokeapi.co/api/v2/pokemon/';
   constructor(private httpClient: HttpClient) {}
 
-  getPokemonPage(offset: number, limit: number = 15): Observable<Result> {
+  getPokemonPage(offset: number, limit: number = 30): Observable<Result> {
     const page = limit * (offset - 1);
     console.log(page);
     return this.httpClient.get<Result>(

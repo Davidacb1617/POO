@@ -1,1 +1,35 @@
-<p>bean-flavor-update works!</p>
+<h1>Update Product</h1>
+
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitFormUpdate()">
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>Flavor Name</nz-form-label>
+    <nz-form-control [nzSpan]="12">
+      <input nz-input formControlName="FlavorName" placeholder="7UP" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>Description</nz-form-label>
+    <nz-form-control [nzSpan]="12">
+      <input
+        nz-input
+        formControlName="Description"
+        placeholder="A partnership made in heaven. Sweet caramel and buttery popcorn."
+      />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>Ingredients</nz-form-label>
+    <nz-form-control [nzSpan]="12">
+      <input formControlName="Ingredients" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-control
+      [nzXs]="{ span: 24, offset: 0 }"
+      [nzSm]="{ span: 16, offset: 8 }"
+    >
+      <button nz-button nzType="primary" type="submit">Update</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>

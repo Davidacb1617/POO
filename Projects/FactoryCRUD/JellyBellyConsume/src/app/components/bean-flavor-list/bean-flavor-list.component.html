@@ -14,13 +14,16 @@
     </tr>
   </thead>
   <tbody>
-    @for (beanFlavor of beanFlavors; track $index) {
-        <tr>
+    <tr *ngFor="let beanFlavor of basicTable.data">
       <td>{{ beanFlavor.FlavorName }}</td>
       <td>{{ beanFlavor.Description }}</td>
       <td>{{ beanFlavor.Ingredients }}</td>
       <td>
-        <button nz-button nzType="default" (click)="selectBeanFlavor(beanFlavor)">
+        <button
+          nz-button
+          nzType="default"
+          (click)="selectBeanFlavor(beanFlavor)"
+        >
           Edit
         </button>
         <button
@@ -32,7 +35,6 @@
           Delete
         </button>
       </td>
-      </tr>
-    }
-</tbody>
+    </tr>
+  </tbody>
 </nz-table>

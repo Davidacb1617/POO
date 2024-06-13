@@ -1,16 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { OnInit } from '@angular/core';
 import { BeanFlavor } from '../../interfaces/bean-flavor';
 import { BeanFlavorListComponent } from '../bean-flavor-list/bean-flavor-list.component';
 import { FormControl, FormGroup, NonNullableFormBuilder } from '@angular/forms';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { ApiService } from '../../services/api.service';
-import {
-  NzFormControlComponent,
-  NzFormDirective,
-  NzFormItemComponent,
-  NzFormLabelComponent,
-} from 'ng-zorro-antd/form';
+import { NzFormItemComponent } from 'ng-zorro-antd/form';
 import { NzColDirective } from 'ng-zorro-antd/grid';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NzInputDirective } from 'ng-zorro-antd/input';
@@ -27,10 +21,7 @@ import { BeanFlavorUpdateComponent } from '../bean-flavor-update/bean-flavor-upd
   imports: [
     BeanFlavorListComponent,
     ReactiveFormsModule,
-    NzFormControlComponent,
-    NzFormDirective,
     NzFormItemComponent,
-    NzFormLabelComponent,
     NzColDirective,
     NzInputDirective,
     NzDatePickerComponent,
@@ -43,7 +34,7 @@ import { BeanFlavorUpdateComponent } from '../bean-flavor-update/bean-flavor-upd
   templateUrl: './bean-flavor.component.html',
   styleUrl: './bean-flavor.component.css',
 })
-export class BeanFlavorComponent implements OnInit {
+export class BeanFlavorComponent {
   selectedBeanFlavor: any;
 
   validateForm: FormGroup<{
@@ -64,7 +55,6 @@ export class BeanFlavorComponent implements OnInit {
       Ingredients: ['', [required]],
     });
   }
-  ngOnInit() {}
 
   submitFormBeanFlavor(): void {
     if (this.validateForm.valid) {

@@ -9,12 +9,12 @@ import { BeanFlavor } from '../interfaces/bean-flavor';
 export class ApiService {
   constructor(private http: HttpClient) {}
   private url = 'http://localhost:3000';
-  
+
   createBeanFlavor<T>(item: T): Observable<BeanFlavor> {
     return this.http.post<BeanFlavor>(`${this.url}/bean-flavor`, item);
   }
 
-  updateBeanFlavor(id: string, item: BeanFlavor): Observable<BeanFlavor> {
+  updateBeanFlavor(id: any, item: any): Observable<BeanFlavor> {
     return this.http.patch<BeanFlavor>(`${this.url}/bean-flavor/${id}`, item);
   }
 

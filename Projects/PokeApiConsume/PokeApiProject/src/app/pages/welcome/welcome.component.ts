@@ -14,7 +14,7 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 })
 export class WelcomeComponent implements OnInit {
   listaPokemon: Result[] = [];
-  page: number = 79;
+  page: number = 1;
 
   constructor(private apiService: PokeApiService) {}
   ngOnInit() {
