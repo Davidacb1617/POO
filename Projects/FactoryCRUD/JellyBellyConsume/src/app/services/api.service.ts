@@ -14,7 +14,7 @@ export class ApiService {
     return this.http.post<BeanFlavor>(`${this.url}/bean-flavor`, item);
   }
 
-  updateBeanFlavor(id: any, item: any): Observable<BeanFlavor> {
+  updateBeanFlavor(id: string, item: any): Observable<BeanFlavor> {
     return this.http.patch<BeanFlavor>(`${this.url}/bean-flavor/${id}`, item);
   }
 

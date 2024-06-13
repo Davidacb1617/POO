@@ -35,6 +35,7 @@ export class BeanFlavorListComponent implements OnInit {
   selectBeanFlavor(beanFlavor: BeanFlavor) {
     this.selectedBeanFlavor.emit(beanFlavor);
   }
+  
   deleteBeanFlavor(id: string) {
     this.service.deleteBeanFlavor(id).subscribe(() => {
       this.loadBeanFlavor();

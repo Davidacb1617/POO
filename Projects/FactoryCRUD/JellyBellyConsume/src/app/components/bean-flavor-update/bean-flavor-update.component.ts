@@ -86,7 +86,7 @@ export class BeanFlavorUpdateComponent implements OnChanges {
   submitFormUpdate(): void {
     if (this.validateForm.valid) {
       this.apiService
-        .updateBeanFlavor(this.beanFlavor.id, this.validateForm.value)
+        .updateBeanFlavor(this.beanFlavor.BeanId, this.validateForm.value)
         .subscribe(() => {
           this.createNotification(
             'success',

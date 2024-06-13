@@ -35,7 +35,7 @@ import { BeanFlavorUpdateComponent } from '../bean-flavor-update/bean-flavor-upd
   styleUrl: './bean-flavor.component.css',
 })
 export class BeanFlavorComponent {
-  selectedBeanFlavor: any;
+  selectedBeanFlavor?: BeanFlavor | null;
 
   validateForm: FormGroup<{
     FlavorName: FormControl<string>;
@@ -82,8 +82,8 @@ export class BeanFlavorComponent {
     this.notification.create(type, title, message);
   }
 
-  editBeanFlavor(product: any): void {
-    this.selectedBeanFlavor = product;
+  editBeanFlavor(beanFlavor: any): void {
+    this.selectedBeanFlavor = beanFlavor;
   }
 
   onBeanFlavorUpdated(): void {

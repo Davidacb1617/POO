@@ -1,10 +1,10 @@
-<h1>Update Product</h1>
+<h1>Update Jelly Bean Flavor</h1>
 
 <form nz-form [formGroup]="validateForm" (ngSubmit)="submitFormUpdate()">
   <nz-form-item>
     <nz-form-label [nzSpan]="7" nzRequired>Flavor Name</nz-form-label>
     <nz-form-control [nzSpan]="12">
-      <input nz-input formControlName="FlavorName" placeholder="7UP" />
+      <input nz-input formControlName="FlavorName" placeholder="CINNAMON" />
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
@@ -13,14 +13,14 @@
       <input
         nz-input
         formControlName="Description"
-        placeholder="A partnership made in heaven. Sweet caramel and buttery popcorn."
+        placeholder="The perfect combination of sugar and spice. These beans have just the right amount of cinnamon to make them a sweet treat for all."
       />
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
     <nz-form-label [nzSpan]="7" nzRequired>Ingredients</nz-form-label>
     <nz-form-control [nzSpan]="12">
-      <input formControlName="Ingredients" />
+      <input nz-input formControlName="Ingredients" placeholder="SUGAR, CORN SYRUP, MODIFIED FOOD STARCH, CONTAINS 2% OR LESS OF THE FOLLOWING: ARTIFICIAL FLAVOR, COLOR ADDED, RED 40, RED 40 LAKE, TURMERIC (COLOR), BEESWAX, CARNAUBA WAX, CONFECTIONER'S GLAZE."/>
     </nz-form-control>
   </nz-form-item>
 
@@ -29,7 +29,7 @@
       [nzXs]="{ span: 24, offset: 0 }"
       [nzSm]="{ span: 16, offset: 8 }"
     >
-      <button nz-button nzType="primary" type="submit">Update</button>
+      <button nz-button nzType="primary" type="submit" class="update_btn">Update</button>
     </nz-form-control>
   </nz-form-item>
 </form>

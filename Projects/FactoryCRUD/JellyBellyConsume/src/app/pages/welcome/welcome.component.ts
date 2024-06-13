@@ -11,17 +11,4 @@ import { BeanFlavorUpdateComponent } from '../../components/bean-flavor-update/b
   styleUrls: ['./welcome.component.css'],
   imports: [BeanFlavorComponent, BeanFlavorListComponent, BeanFlavorUpdateComponent],
 })
-export class WelcomeComponent implements OnInit {
-  constructor(private service: ApiService) {}
-  beanFlavors: BeanFlavor[] = [];
-  ngOnInit(): void {
-    this.getBeanFlavors();
-  }
-
-  getBeanFlavors() {
-    this.service.getBeanFlavors().subscribe((data) => {
-      this.beanFlavors = data;
-      console.log(this.beanFlavors);
-    });
-  }
-}
+export class WelcomeComponent  {}
